@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -11,13 +10,13 @@ public class RankingController : MonoBehaviour
     private void Awake()
     {
         path = Application.persistentDataPath + "/ranking.json";
-        SaveRanking("Test", DateTime.Now.Ticks);
     }
 
     public void SaveRanking(string name, float time)
     {
         Ranking newRanking = new Ranking(name, time);
         var rankingList = LoadRanking();
+        //We only save the best 10 ranks
         if (rankingList.Ranking.Count < 10)
         {
             rankingList.Ranking.Add(newRanking);
