@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     private bool stopped;
+    [HideInInspector]
     public float timePlayed;
     public GameObject escMenu;
     public GameObject player;
+    public Text TimePlayedText;
+    private TimeSpan timeSpan;
 
     private void Awake()
     {
@@ -28,5 +33,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         timePlayed += Time.deltaTime;
+        timeSpan = TimeSpan.FromSeconds(timePlayed);
+        TimePlayedText.text = $"{timeSpan.Minutes}:{timeSpan.Seconds}";
     }
 }

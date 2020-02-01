@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PipesManager : MonoBehaviour
 {
     private List<Pipe> pipes;
-    private int brokenPipes;
+    [HideInInspector]
+    public int brokenPipes;
     [HideInInspector]
     public int TimeToBreak = 3;
     private float counter;
     private int rndToBreak;
     private bool brokePipe;
+    public Text TextBrokenPipes;
 
     private void Awake()
     {
@@ -55,8 +58,8 @@ public class PipesManager : MonoBehaviour
         return false;
     }
 
-    public void CheckBrokenPipes()
+    public void UpdateBrokenPipesUI()
     {
-        brokenPipes = pipes.Count(c => c.IsBroken);
+        TextBrokenPipes.text = brokenPipes.ToString();
     }
 }
