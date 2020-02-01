@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         timePlayed += Time.deltaTime;
-        timeSpan = TimeSpan.FromSeconds(timePlayed);
+        timeSpan = TimeSpan.FromSeconds((double)new decimal(timePlayed));
         TimePlayedText.text = $"{timeSpan.Minutes}:{timeSpan.Seconds}";
     }
 }

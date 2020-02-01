@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8933018329937676735}
-  - component: {fileID: 8933018329937676734}
-  - component: {fileID: 8933018329937676732}
-  - component: {fileID: 9069637419595059210}
-  - component: {fileID: 2932217743487648706}
-  - component: {fileID: 4163863405233914282}
-  - component: {fileID: 4163863406117497056}
+  - component: {fileID: 4769724747816729380}
+  - component: {fileID: 4769724747816729381}
+  - component: {fileID: 4769724747816729383}
+  - component: {fileID: 4905775256329888401}
+  - component: {fileID: 1258851977191862617}
+  - component: {fileID: 734737201}
+  - component: {fileID: 2090836444522277131}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -54,7 +54,7 @@ MonoBehaviour:
     type: 3}
   FemaleAnimatonClip: {fileID: 7400000, guid: fad57d03f270b2249b4b1d11ed5927f5, type: 2}
   MaleAnimationClip: {fileID: 7400000, guid: 4e7f771c489817b47a1054d986349e7a, type: 2}
---- !u!212 &8933018329937676732
+--- !u!212 &4769724747816729383
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933018329937676611}
+  m_GameObject: {fileID: 4769724747816729560}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -171,13 +171,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4163863406117497056
+--- !u!114 &2090836444522277131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933018329937676611}
+  m_GameObject: {fileID: 4769724747816729560}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 439b974a4b414084186bcda2ade18c0d, type: 3}
@@ -188,4 +188,4 @@ MonoBehaviour:
   numberPlayer: 1
   fixVerticalMove: 1
   canJump: 1
-  forceJump: 10
+  forceJump: 30
