@@ -18,6 +18,8 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
     public InputSystemActionsManager.PlayerGeneralActions PlayerGeneralActions { get; set; }
     public Action<InputAction.CallbackContext> Pause { get; set; }
     public Action<InputAction.CallbackContext> Repair { get; set; }
+    private bool move;
+    private InputAction.CallbackContext moveContext;
 
     void Awake()
     {
@@ -42,20 +44,34 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
         this._inputSystemActionsManager.Disable();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    private void FixedUpdate()
     {
-        if (context.performed)
+        if (this.move)
         {
-            Vector2 movementAction = context.ReadValue<Vector2>();
+            Vector2 movementAction = this.moveContext.ReadValue<Vector2>();
             float verticalMovement = movementAction.y;
             float horizontalMovement = movementAction.x;
             
             Move(horizontalMovement, verticalMovement);
             Rotate(horizontalMovement, verticalMovement);
         }
-        else if(context.canceled)
+        else
         {
             this._rigidBodyComponent.velocity = new Vector2(0f, this._rigidBodyComponent.velocity.y);
+        }
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            this.move = true;
+            this.moveContext = context;
+        }
+        
+        if(context.canceled)
+        {
+            this.move = false;
         }
     }
 
