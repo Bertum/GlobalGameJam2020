@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
     private InputKeyController _inputKeyController;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private float counterToRepair;
+    private Pipe currentPipe;
 
     void Awake()
     {
+        counterToRepair = 0;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomSprite();
@@ -24,6 +27,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (currentPipe != null && currentPipe.IsBroken && (Input.GetKey(KeyCode.E) || _joystickController.IsPressButtonX()))
+        {
+            counterToRepair += Time.deltaTime;
+            if (counterToRepair >= 1)
+            {
+                currentPipe.FixPipe();
+            }
+        }
+        else
+        {
+            counterToRepair = 0;
+        }
+
         if (this._joystickController.IsPressAnyButton())
         {
             this._joystickController.Jump();
@@ -66,11 +82,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Pipe") && (Input.GetKeyDown(KeyCode.E) || _joystickController.IsPressButtonX()))
+        if (collision.CompareTag("Pipe"))
         {
-            collision.GetComponent<Pipe>().FixPipe();
+            currentPipe = collision.GetComponent<Pipe>();
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pipe"))
+        {
+            currentPipe = null;
+        }
+    }
+
+
 }
