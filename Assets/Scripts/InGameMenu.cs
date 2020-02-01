@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
+    
     public void GoGame()
     {
-        //TODO: Close canvas
+        
     }
 
     public void GoMenu()
