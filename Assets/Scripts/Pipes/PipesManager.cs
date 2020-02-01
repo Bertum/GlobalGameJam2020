@@ -57,6 +57,8 @@ public class PipesManager : MonoBehaviour
 
     public void CheckBrokenPipes()
     {
-        brokenPipes = pipes.Count(c => c.IsBroken);
+        BrokenPipesUpdated?.Invoke(pipes.Count(c => c.IsBroken));
     }
+
+    public event System.Action<int> BrokenPipesUpdated;
 }
