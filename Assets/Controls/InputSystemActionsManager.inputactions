@@ -1,5 +1,5 @@
 {
-    "name": "InputSystemControllerManager",
+    "name": "InputSystemActionsManager",
     "maps": [
         {
             "name": "PlayerGeneral",
@@ -68,7 +68,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "right",
                     "id": "b7c29c44-9e12-42f8-8fe4-888287cc4e42",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -79,7 +79,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "left",
                     "id": "ad584923-43c2-4c68-af3c-022bebe2039c",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -148,6 +148,28 @@
                     "name": "",
                     "id": "b11e9a00-6ad6-4da2-be47-6fb8ce5fd76b",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02a1cd2b-c3be-43e8-9dcf-06650ff1b0eb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bbf79fb9-d6f0-4719-9e88-a9a624c874ee",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -248,7 +270,7 @@
                 {
                     "name": "",
                     "id": "d50fd05e-7d8f-4e8c-963a-1f0a24529e87",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -325,7 +347,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "right",
                     "id": "d346e36c-8784-4565-b895-fa4c3fb23ee7",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -336,7 +358,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "left",
                     "id": "fdfb24d8-e2ab-4015-9df0-b6937a51c6b4",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -349,7 +371,7 @@
                 {
                     "name": "",
                     "id": "d6c5542c-37bc-459f-a820-66512bb1be6a",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
