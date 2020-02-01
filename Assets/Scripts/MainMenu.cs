@@ -1,28 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject creditsPanel;
-    public void GoPlay() 
+    public GameObject rankingPanel;
+    public Text rankingText;
+    private RankingController rankingController;
+
+    private void Awake()
+    {
+        creditsPanel.SetActive(false);
+        rankingPanel.SetActive(false);
+        rankingController = FindObjectOfType<RankingController>();
+    }
+
+    public void GoPlay()
     {
         SceneManager.LoadScene("Game");
     }
-    public void GoExit() 
+    public void GoExit()
     {
         Application.Quit();
     }
-    public void GoCredits() 
+    public void GoCredits()
     {
         creditsPanel.SetActive(true);
     }
-    public void CloseCredits() {
+    public void CloseCredits()
+    {
         creditsPanel.SetActive(false);
     }
-    public void GoRanking() 
+
+    public void CloseRanking()
     {
-        SceneManager.LoadScene("Ranking");
+        rankingPanel.SetActive(false);
+    }
+
+    public void GoRanking()
+    {
+        rankingText.text = rankingController.GetRankingForText();
+        rankingPanel.SetActive(true);
     }
 }

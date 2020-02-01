@@ -16,8 +16,8 @@ public class RankingController : MonoBehaviour
     public void SaveRanking(string name, float time)
     {
         var rankingList = LoadRanking();
-        //We only save the best 10 ranks
-        if (rankingList.Ranking.Count < 10)
+        //We only save the best 5 ranks
+        if (rankingList.Ranking.Count < 5)
         {
             rankingList.Ranking.Add(new Ranking(name, time));
         }
