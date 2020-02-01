@@ -65,4 +65,12 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pipe") && (Input.GetKeyDown(KeyCode.E) || _joystickController.IsPressButtonX()))
+        {
+            collision.GetComponent<Pipe>().FixPipe();
+        }
+    }
 }
