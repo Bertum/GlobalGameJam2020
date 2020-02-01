@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -49,9 +50,21 @@ public class RankingController : MonoBehaviour
         }
     }
 
-    public List<Ranking> GetOrderedRanking()
+    private List<Ranking> GetOrderedRanking()
     {
         var rankingList = LoadRanking();
         return rankingList.Ranking.OrderByDescending(o => o.Time).ToList();
+    }
+
+    public string GetRankingForText()
+    {
+        var rankingLoaded = GetOrderedRanking();
+        string rankingString = "";
+        foreach (var rank in rankingLoaded)
+        {
+            var timeSpan = TimeSpan.FromSeconds(rank.Time);
+            rankingString += $"{rank.Name} : {timeSpan.Minutes}:{timeSpan.Seconds} \n";
+        }
+        return rankingString;
     }
 }
