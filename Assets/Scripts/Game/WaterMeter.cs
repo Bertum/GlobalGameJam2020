@@ -3,7 +3,12 @@ using UnityEngine.UI;
 
 public class WaterMeter : MonoBehaviour
 {
-    public Slider WaterSlider;
+    private Slider WaterSlider;
+
+    private void Awake()
+    {
+        WaterSlider = GetComponent<Slider>();
+    }
 
     public void SetWaterLevel(float level)
     {
