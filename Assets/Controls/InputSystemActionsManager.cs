@@ -33,6 +33,22 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""152878f1-440a-427a-98ff-c7eacb62cf39"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Repair"",
+                    ""type"": ""Button"",
+                    ""id"": ""331470ef-e225-4108-9618-05518ca30878"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -187,6 +203,50 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb33ec5d-98b3-4804-b43f-3fd4421221bf"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa298e99-74b1-490b-adfa-e3b362bada69"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12d95dd4-3d5d-41ee-a3a1-74bae53cc5b1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Repair"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d4fbdbf-1872-467a-8022-207cd9fd1d6e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Repair"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -401,6 +461,8 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
         m_PlayerGeneral = asset.FindActionMap("PlayerGeneral", throwIfNotFound: true);
         m_PlayerGeneral_Move = m_PlayerGeneral.FindAction("Move", throwIfNotFound: true);
         m_PlayerGeneral_Jump = m_PlayerGeneral.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerGeneral_Pause = m_PlayerGeneral.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerGeneral_Repair = m_PlayerGeneral.FindAction("Repair", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
@@ -460,12 +522,16 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
     private IPlayerGeneralActions m_PlayerGeneralActionsCallbackInterface;
     private readonly InputAction m_PlayerGeneral_Move;
     private readonly InputAction m_PlayerGeneral_Jump;
+    private readonly InputAction m_PlayerGeneral_Pause;
+    private readonly InputAction m_PlayerGeneral_Repair;
     public struct PlayerGeneralActions
     {
         private @InputSystemActionsManager m_Wrapper;
         public PlayerGeneralActions(@InputSystemActionsManager wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerGeneral_Move;
         public InputAction @Jump => m_Wrapper.m_PlayerGeneral_Jump;
+        public InputAction @Pause => m_Wrapper.m_PlayerGeneral_Pause;
+        public InputAction @Repair => m_Wrapper.m_PlayerGeneral_Repair;
         public InputActionMap Get() { return m_Wrapper.m_PlayerGeneral; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -481,6 +547,12 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnJump;
+                @Pause.started -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnPause;
+                @Repair.started -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnRepair;
+                @Repair.performed -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnRepair;
+                @Repair.canceled -= m_Wrapper.m_PlayerGeneralActionsCallbackInterface.OnRepair;
             }
             m_Wrapper.m_PlayerGeneralActionsCallbackInterface = instance;
             if (instance != null)
@@ -491,6 +563,12 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @Repair.started += instance.OnRepair;
+                @Repair.performed += instance.OnRepair;
+                @Repair.canceled += instance.OnRepair;
             }
         }
     }
@@ -581,6 +659,8 @@ public class @InputSystemActionsManager : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnRepair(InputAction.CallbackContext context);
     }
     public interface IPlayer2Actions
     {

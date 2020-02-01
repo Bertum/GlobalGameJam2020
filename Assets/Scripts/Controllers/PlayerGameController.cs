@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerGameController : MonoBehaviour
 {
@@ -23,11 +24,12 @@ public class PlayerGameController : MonoBehaviour
         SetRandomSprite();
         this._rigidBodyComponent = this.GetComponent<Rigidbody2D>();
         this._characterControlSystem = GetComponent<CharacterControlSystem>();
+        this._characterControlSystem.Repair += Repair;
     }
 
-    void Update()
+    private void Repair(InputAction.CallbackContext context)
     {
-        if (currentPipe != null && currentPipe.IsBroken && (Input.GetKey(KeyCode.E) || _joystickController.IsPressButtonX()))
+        if (currentPipe != null && currentPipe.IsBroken  && context.performed)
         {
             counterToRepair += Time.deltaTime;
             if (counterToRepair >= 1)
@@ -39,6 +41,10 @@ public class PlayerGameController : MonoBehaviour
         {
             counterToRepair = 0;
         }
+    }
+
+    void Update()
+    {
     }
 
     void FixedUpdate()
