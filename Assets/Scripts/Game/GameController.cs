@@ -4,9 +4,11 @@ public class GameController : MonoBehaviour
 {
     private bool stopped;
     private float timePlayed;
+    public GameObject escMenu;
 
     private void Awake()
     {
+        escMenu.SetActive(false);
         stopped = false;
     }
 
@@ -16,6 +18,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             stopped = !stopped;
+            escMenu.SetActive(stopped);
             if (stopped)
                 Time.timeScale = 0;
             else
