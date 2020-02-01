@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
 {
+    public GameObject menu;
     public void GoReset()
     {
-        //TODO: Reset the game
+        menu.SetActive(false);
     }
     
     public void GoMenu()
