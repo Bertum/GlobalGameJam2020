@@ -2,15 +2,19 @@
 
 public class PlayerController : MonoBehaviour
 {
+    public Sprite FemaleSprite;
+    public Sprite MaleSprite;
+    public AnimationClip FemaleAnimatonClip;
+    public AnimationClip MaleAnimationClip;
     private Rigidbody2D _rigidBodyComponent;
     private JoystickController _joystickController;
     private InputKeyController _inputKeyController;
-    public Sprite FemaleSprite;
-    public Sprite MaleSprite;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomSprite();
         this._rigidBodyComponent = this.GetComponent<Rigidbody2D>();
@@ -53,10 +57,20 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 spriteRenderer.sprite = FemaleSprite;
+                animator.SetBool("IsFemale", true);
                 break;
             case 1:
                 spriteRenderer.sprite = MaleSprite;
+                animator.SetBool("IsFemale", false);
                 break;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pipe") && (Input.GetKeyDown(KeyCode.E) || _joystickController.IsPressButtonX()))
+        {
+            collision.GetComponent<Pipe>().FixPipe();
         }
     }
 }
