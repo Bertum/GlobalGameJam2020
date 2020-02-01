@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JoystickController : MonoBehaviour
 {
-    private static readonly string JOYSTICK_LEFT_ONE_HORIZONTAL = "JLH"; //Joystick izquierdo - horizontal
-    private static readonly string JOYSTICK_LEFT_ONE_VERTICAL = "JLV"; //Joystick izquierdo - vertical
+    private static readonly string JOYSTICK_LEFT_ONE_HORIZONTAL = "JLH"; //Joystick Left - horizontal
+    private static readonly string JOYSTICK_LEFT_ONE_VERTICAL = "JLV"; //Joystick Left - vertical
     private static readonly string JOYSTICK_A = "AB"; //Joystick A button
     private static readonly string JOYSTICK_B = "BB"; //Joystick B button
     private static readonly string JOYSTICK_X = "XB"; //Joystick X button

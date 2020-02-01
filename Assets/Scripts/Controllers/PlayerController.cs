@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
         this._inputKeyController = this.GetComponent<InputKeyController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (this._joystickController.IsPressAnyButton())
