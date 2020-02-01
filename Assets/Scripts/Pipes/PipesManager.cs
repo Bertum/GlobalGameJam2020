@@ -61,5 +61,8 @@ public class PipesManager : MonoBehaviour
     public void UpdateBrokenPipesUI()
     {
         TextBrokenPipes.text = brokenPipes.ToString();
+        BrokenPipesUpdated?.Invoke(brokenPipes);
     }
+
+    public event System.Action<int> BrokenPipesUpdated;
 }
