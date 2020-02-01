@@ -4,5 +4,5 @@ using System.Collections.Generic;
 [Serializable]
 public class RankingList
 {
-    public List<Ranking> Ranking { get; set; }
+    public List<Ranking> Ranking;
 }

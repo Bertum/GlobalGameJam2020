@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class RankingController : MonoBehaviour
     private void Awake()
     {
         path = Application.persistentDataPath + "/ranking.json";
-        SaveRanking("Test", Time.deltaTime);
+        SaveRanking("Test", DateTime.Now.Ticks);
     }
 
     public void SaveRanking(string name, float time)

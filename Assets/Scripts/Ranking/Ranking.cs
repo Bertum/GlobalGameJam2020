@@ -8,6 +8,6 @@ public class Ranking
         Name = name;
         Time = time;
     }
-    public string Name { get; set; }
-    public float Time { get; set; }
+    public string Name;
+    public float Time;
 }
