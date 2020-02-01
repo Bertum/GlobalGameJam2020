@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4769724747816729560
+--- !u!1 &8933018329937676611
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,14 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4769724747816729380}
-  - component: {fileID: 4769724747816729381}
-  - component: {fileID: 4769724747816729562}
-  - component: {fileID: 4769724747816729563}
-  - component: {fileID: 4769724747816729383}
-  - component: {fileID: 4905775256329888401}
-  - component: {fileID: 1258851977191862617}
-  - component: {fileID: 734737201}
+  - component: {fileID: 8933018329937676735}
+  - component: {fileID: 8933018329937676734}
+  - component: {fileID: 8933018329937676732}
+  - component: {fileID: 9069637419595059210}
+  - component: {fileID: 2932217743487648706}
+  - component: {fileID: 4163863405233914282}
+  - component: {fileID: 4163863406117497056}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -23,27 +22,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4769724747816729380
+--- !u!4 &8933018329937676735
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.75062, y: -0.21783401, z: 0}
+  m_LocalPosition: {x: -1.57, y: 2.08, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4769724747816729381
+--- !u!114 &8933018329937676734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 994d7d9fb90861f4ea2840d80e0da88a, type: 3}
@@ -55,46 +54,13 @@ MonoBehaviour:
     type: 3}
   FemaleAnimatonClip: {fileID: 7400000, guid: fad57d03f270b2249b4b1d11ed5927f5, type: 2}
   MaleAnimationClip: {fileID: 7400000, guid: 4e7f771c489817b47a1054d986349e7a, type: 2}
---- !u!114 &4769724747816729562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feb4c89175b327c44822271da76d2537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHorizontalSpeed: 10
-  maxVerticalSpeed: 10
-  numberPlayer: 1
-  fixVerticalMove: 0
-  canJump: 0
-  keyJump: AB
-  forceJump: 5
---- !u!114 &4769724747816729563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77716647f88d4c645ba68ee272a6d8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  forceJump: 10
---- !u!212 &4769724747816729383
+--- !u!212 &8933018329937676732
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -139,15 +105,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4905775256329888401
+--- !u!50 &9069637419595059210
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
-  m_BodyType: 1
+  m_GameObject: {fileID: 8933018329937676611}
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -160,20 +126,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1258851977191862617
+--- !u!61 &2932217743487648706
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28589654, y: 0.05198288}
+  m_Offset: {x: 0.13414264, y: -3.283638}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -184,16 +150,16 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.6263337, y: 7.029827}
+  m_Size: {x: 5.5617146, y: 0.5940399}
   m_EdgeRadius: 0
---- !u!95 &734737201
+--- !u!95 &4163863405233914282
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d30e0655b8f630949bdf0c46d632e02d, type: 2}
@@ -205,3 +171,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4163863406117497056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933018329937676611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439b974a4b414084186bcda2ade18c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHorizontalSpeed: 10
+  maxVerticalSpeed: 10
+  numberPlayer: 1
+  fixVerticalMove: 1
+  canJump: 1
+  forceJump: 10

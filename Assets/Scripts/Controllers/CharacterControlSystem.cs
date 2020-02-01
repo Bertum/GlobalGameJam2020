@@ -11,7 +11,7 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
     public float maxVerticalSpeed = 10f;
     public int numberPlayer = 1;
     public bool fixVerticalMove = false;
-    public bool canJump = false;
+    public bool canJump = true;
     public float forceJump = 5f;
     private InputSystemActionsManager _inputSystemActionsManager;
     private Rigidbody2D _rigidBodyComponent;
@@ -64,6 +64,7 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
         if (context.performed && this.canJump)
         {
             this._rigidBodyComponent.velocity = new Vector2(0f, this.forceJump);
+            this.canJump = false;
         }
     }
 
