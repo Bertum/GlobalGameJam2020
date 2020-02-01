@@ -15,19 +15,18 @@ public class RankingController : MonoBehaviour
 
     public void SaveRanking(string name, float time)
     {
-        Ranking newRanking = new Ranking(name, time);
         var rankingList = LoadRanking();
         //We only save the best 10 ranks
         if (rankingList.Ranking.Count < 10)
         {
-            rankingList.Ranking.Add(newRanking);
+            rankingList.Ranking.Add(new Ranking(name, time));
         }
-        else if (rankingList.Ranking.Any(a => a.Time < newRanking.Time))
+        else if (rankingList.Ranking.Any(a => a.Time < time))
         {
             //Overwrite the lower rank
             var lowerRank = rankingList.Ranking.FirstOrDefault();
             rankingList.Ranking.Remove(lowerRank);
-            rankingList.Ranking.Add(newRanking);
+            rankingList.Ranking.Add(new Ranking(name, time));
         }
         var json = JsonUtility.ToJson(rankingList);
         File.WriteAllText(path, json);
