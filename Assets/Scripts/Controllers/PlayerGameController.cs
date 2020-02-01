@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerGameController : MonoBehaviour
 {
     public Sprite FemaleSprite;
     public Sprite MaleSprite;
@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private float counterToRepair;
     private Pipe currentPipe;
+    private CharacterControlSystem _characterControlSystem;
 
     void Awake()
     {
@@ -21,8 +22,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomSprite();
         this._rigidBodyComponent = this.GetComponent<Rigidbody2D>();
-        this._joystickController = this.GetComponent<JoystickController>();
-        this._inputKeyController = this.GetComponent<InputKeyController>();
+        this._characterControlSystem = GetComponent<CharacterControlSystem>();
     }
 
     void Update()
@@ -39,31 +39,10 @@ public class PlayerController : MonoBehaviour
         {
             counterToRepair = 0;
         }
-
-        if (this._joystickController.IsPressAnyButton())
-        {
-            this._joystickController.Jump();
-        }
-        else if (this._inputKeyController.IsKeySpaceDown())
-        {
-            this._inputKeyController.Jump();
-        }
     }
 
     void FixedUpdate()
     {
-        if (this._joystickController.IsPressJoystick())
-        {
-            this._joystickController.MoveUpdate();
-        }
-        else if (this._inputKeyController.IsPressMovement())
-        {
-            this._inputKeyController.MoveUpdate();
-        }
-        else
-        {
-            this._rigidBodyComponent.velocity = new Vector2(0f, this._rigidBodyComponent.velocity.y);
-        }
     }
 
     private void SetRandomSprite()
@@ -97,6 +76,4 @@ public class PlayerController : MonoBehaviour
             currentPipe = null;
         }
     }
-
-
 }
