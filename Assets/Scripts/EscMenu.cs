@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
@@ -10,7 +8,7 @@ public class EscMenu : MonoBehaviour
     {
         menu.SetActive(false);
     }
-    
+
     public void GoMenu()
     {
         SceneManager.LoadScene("MainMenu");

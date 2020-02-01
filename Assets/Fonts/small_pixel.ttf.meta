@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e768d29498af894895e9a5b0a610338
+guid: 2fd732d980eb42c4a898d876002aff42
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Karma Future
+  fontName: Small Pixel
   fontNames:
-  - Karma Future
+  - Small Pixel
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

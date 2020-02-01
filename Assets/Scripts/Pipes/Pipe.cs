@@ -23,7 +23,8 @@ public class Pipe : MonoBehaviour
         IsBroken = true;
         Water.SetActive(true);
         spriteRenderer.sprite = BrokenSprite;
-        pipesManager.CheckBrokenPipes();
+        pipesManager.brokenPipes++;
+        pipesManager.UpdateBrokenPipesUI();
     }
 
     public void FixPipe()
@@ -31,6 +32,7 @@ public class Pipe : MonoBehaviour
         IsBroken = false;
         Water.SetActive(false);
         spriteRenderer.sprite = FixedSprite;
-        pipesManager.CheckBrokenPipes();
+        pipesManager.brokenPipes--;
+        pipesManager.UpdateBrokenPipesUI();
     }
 }

@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: e6dfbe8e5db33db42a3b72c7a2cbc4a6
+guid: 60969b0abe4bdea448b624b41087b7df
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3048061754344437607
-    second: MalePlayer 1_0
-  - first:
-      213: 2346631157317585687
-    second: MalePlayer 1_1
-  - first:
-      213: 5491915177780520168
-    second: MalePlayer_0
-  - first:
-      213: -3904575731417485426
-    second: MalePlayer_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,15 +34,15 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -96,49 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: MalePlayer_0
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 1120
-        width: 448
-        height: 736
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e42f2cb1c3373c40800000000000000
-      internalID: 5491915177780520168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MalePlayer_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 96
-        width: 448
-        height: 736
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8fef324f0920d9c0800000000000000
-      internalID: -3904575731417485426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
