@@ -5,16 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
+    public GameObject creditsPanel;
     public void GoPlay() 
     {
         SceneManager.LoadScene("Game");
@@ -25,7 +16,10 @@ public class MainMenu : MonoBehaviour
     }
     public void GoCredits() 
     {
-        SceneManager.LoadScene("Credits");
+        creditsPanel.SetActive(true);
+    }
+    public void CloseCredits() {
+        creditsPanel.SetActive(false);
     }
     public void GoRanking() 
     {

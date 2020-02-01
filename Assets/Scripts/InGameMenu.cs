@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GoGame()
     {
         //TODO: Close canvas
