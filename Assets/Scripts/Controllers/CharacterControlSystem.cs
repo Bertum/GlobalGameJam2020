@@ -16,6 +16,8 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
     private InputSystemActionsManager _inputSystemActionsManager;
     private Rigidbody2D _rigidBodyComponent;
     public InputSystemActionsManager.PlayerGeneralActions PlayerGeneralActions { get; set; }
+    public Action<InputAction.CallbackContext> Pause { get; set; }
+    public Action<InputAction.CallbackContext> Repair { get; set; }
 
     void Awake()
     {
@@ -63,6 +65,16 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
         {
             this._rigidBodyComponent.velocity = new Vector2(0f, this.forceJump);
         }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        this.Pause.Invoke(context);
+    }
+
+    public void OnRepair(InputAction.CallbackContext context)
+    {
+        this.Repair.Invoke(context);
     }
 
     private void Rotate(float horizontalMovement, float verticalMovement)
