@@ -15,6 +15,7 @@ public class PlayerGameController : MonoBehaviour
     private float counterToRepair;
     private Pipe currentPipe;
     private CharacterControlSystem _characterControlSystem;
+    private bool canRepair;
 
     void Awake()
     {
@@ -25,11 +26,25 @@ public class PlayerGameController : MonoBehaviour
         this._rigidBodyComponent = this.GetComponent<Rigidbody2D>();
         this._characterControlSystem = GetComponent<CharacterControlSystem>();
         this._characterControlSystem.Repair += Repair;
+        this.canRepair = false;
     }
 
     private void Repair(InputAction.CallbackContext context)
     {
-        if (currentPipe != null && currentPipe.IsBroken  && context.performed)
+        if (context.performed)
+        {
+            this.canRepair = true;
+        }
+        
+        if (context.canceled)
+        {
+            this.canRepair = false;
+        }
+    }
+
+    void Update()
+    {
+        if (currentPipe != null && currentPipe.IsBroken && this.canRepair)
         {
             counterToRepair += Time.deltaTime;
             if (counterToRepair >= 1)
@@ -41,10 +56,6 @@ public class PlayerGameController : MonoBehaviour
         {
             counterToRepair = 0;
         }
-    }
-
-    void Update()
-    {
     }
 
     void FixedUpdate()
