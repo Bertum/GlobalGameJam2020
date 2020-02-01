@@ -3,7 +3,7 @@
 public class GameController : MonoBehaviour
 {
     private bool stopped;
-    private float timePlayed;
+    public float timePlayed;
     public GameObject escMenu;
 
     private void Awake()
