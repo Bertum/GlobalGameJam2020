@@ -6,6 +6,7 @@ public class PipesManager : MonoBehaviour
 {
     private List<Pipe> pipes;
     private int brokenPipes;
+    [HideInInspector]
     public int TimeToBreak = 3;
     private float counter;
     private int rndToBreak;
