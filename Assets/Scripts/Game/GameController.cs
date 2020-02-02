@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     private bool stopped;
+    private bool gameFinished;
     [HideInInspector]
     public float timePlayed;
     public GameObject escMenu;
+    public GameObject endGameMenu;
     public GameObject player;
     public Text TimePlayedText;
     private TimeSpan timeSpan;
@@ -16,6 +18,7 @@ public class GameController : MonoBehaviour
     {
         escMenu.SetActive(false);
         stopped = false;
+        gameFinished = false;
         this.player.GetComponent<CharacterControlSystem>().Pause += context =>
         {
             if (context.performed)
@@ -32,8 +35,17 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        timePlayed += Time.deltaTime;
-        timeSpan = TimeSpan.FromSeconds((double)new decimal(timePlayed));
-        TimePlayedText.text = $"{timeSpan.Minutes}:{timeSpan.Seconds}";
+        if (gameFinished)
+        {
+            timePlayed += Time.deltaTime;
+            timeSpan = TimeSpan.FromSeconds((double)new decimal(timePlayed));
+            TimePlayedText.text = $"{timeSpan.Minutes}:{timeSpan.Seconds}";
+        }
+    }
+
+    public void EndGame()
+    {
+        gameFinished = true;
+        endGameMenu.SetActive(true);
     }
 }

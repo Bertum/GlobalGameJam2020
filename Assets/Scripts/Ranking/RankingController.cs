@@ -61,7 +61,7 @@ public class RankingController : MonoBehaviour
         string rankingString = "";
         foreach (var rank in rankingLoaded)
         {
-            var timeSpan = TimeSpan.FromSeconds(rank.Time);
+            var timeSpan = TimeSpan.FromSeconds((double)new decimal(rank.Time));
             rankingString += $"{rank.Name} : {timeSpan.Minutes}:{timeSpan.Seconds} \n";
         }
         return rankingString;
