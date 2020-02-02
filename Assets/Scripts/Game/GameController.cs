@@ -49,11 +49,10 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        this._audioSource.Play();
         gameFinished = true;
         uiMenu.SetActive(false);
         endGameMenu.SetActive(true);
         FindObjectOfType<InGameMenu>().SetTitle();
-        //this._audioSource.clip = this.audioClipEndGame;
-        //this._audioSource.Play();
     }
 }

@@ -332,6 +332,7 @@ MonoBehaviour:
     type: 3}
   FemaleAnimatonClip: {fileID: 7400000, guid: fad57d03f270b2249b4b1d11ed5927f5, type: 2}
   MaleAnimationClip: {fileID: 7400000, guid: 4e7f771c489817b47a1054d986349e7a, type: 2}
+  toolRenderer: {fileID: 0}
 --- !u!114 &2090836444522277131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c7e7fc2e0dcc4bb4eae097aa19828d0d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8236d67b65e2084b8741770c1148871, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
