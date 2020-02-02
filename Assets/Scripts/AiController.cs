@@ -16,7 +16,7 @@ public class AiController : MonoBehaviour
     public float Speed;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         Player.GetComponent<CharacterControlSystem>().OnDisable();
     }
