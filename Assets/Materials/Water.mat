@@ -53,13 +53,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Flatness: 0
+    - Tilling: 4
+    - Vector1_1060C3F1: 4
     - Vector1_27415B92: 0.3
-    - Vector1_5016FA2B: 3
+    - Vector1_5016FA2B: 4
     - Vector1_5E0F3000: 0
     - Vector1_73CDB478: 0
     - Vector1_B6DACAF3: 2
     - Vector1_E0AFC60E: 2
-    - Vector1_E1238274: 3
+    - Vector1_E1238274: 4
+    - WaveHeight: 2
+    - WavePower: 0.3
+    - WaveScale: 4
+    - WaveSpeed: 2
+    - WaveX: 4
+    - WaveZ: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

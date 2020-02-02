@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4769724747816729380}
-  - component: {fileID: 4769724747816729381}
+  - component: {fileID: 8933018329937676735}
+  - component: {fileID: 8933018329937676734}
   - component: {fileID: 4769724747816729383}
-  - component: {fileID: 4905775256329888401}
-  - component: {fileID: 1258851977191862617}
-  - component: {fileID: 734737201}
+  - component: {fileID: 9069637419595059210}
+  - component: {fileID: 2932217743487648706}
+  - component: {fileID: 4163863405233914282}
   - component: {fileID: 2090836444522277131}
   m_Layer: 0
   m_Name: Player
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769724747816729560}
+  m_GameObject: {fileID: 8933018329937676611}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 439b974a4b414084186bcda2ade18c0d, type: 3}
