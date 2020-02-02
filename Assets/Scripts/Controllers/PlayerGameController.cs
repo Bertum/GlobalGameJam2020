@@ -17,6 +17,7 @@ public class PlayerGameController : MonoBehaviour
     private CharacterControlSystem _characterControlSystem;
     private bool canRepair;
     private AudioSource _audioSourceRepair;
+    public SpriteRenderer toolRenderer;
 
     void Awake()
     {
@@ -29,6 +30,7 @@ public class PlayerGameController : MonoBehaviour
         this._characterControlSystem.Repair += Repair;
         this.canRepair = false;
         this._audioSourceRepair = GetComponent<AudioSource>();
+        this.toolRenderer.enabled = false;
     }
 
     private void Repair(InputAction.CallbackContext context)
@@ -48,6 +50,10 @@ public class PlayerGameController : MonoBehaviour
     {
         if (currentPipe != null && currentPipe.IsBroken && this.canRepair)
         {
+            if (!toolRenderer.enabled)
+            {
+                this.toolRenderer.enabled = true;
+            }
             counterToRepair += Time.deltaTime;
 
             if (!this._audioSourceRepair.isPlaying)
@@ -65,6 +71,10 @@ public class PlayerGameController : MonoBehaviour
         {
             this._audioSourceRepair.Stop();
             counterToRepair = 0;
+            if (toolRenderer.enabled)
+            {
+                this.toolRenderer.enabled = false;
+            }
         }
     }
 
