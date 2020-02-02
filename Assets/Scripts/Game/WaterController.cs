@@ -19,8 +19,11 @@ public class WaterController : MonoBehaviour
     void Start()
     {
         _initialScale = Water.transform.localScale.y;
-        GameObject.Find("PipeManager").GetComponent<PipesManager>().BrokenPipesUpdated += OnLeakingUpdate;
-        _slider = GameObject.Find("WaterSlider").GetComponent<WaterMeter>();
+        var pipe = GameObject.Find("PipeManager");
+        if (pipe != null) pipe.GetComponent<PipesManager>().BrokenPipesUpdated += OnLeakingUpdate;
+        
+        var slider = GameObject.Find("WaterSlider");
+        if (slider != null) _slider = slider.GetComponent<WaterMeter>();
     }
 
     private void OnLeakingUpdate(int brokenPipes)

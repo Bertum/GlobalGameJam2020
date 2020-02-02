@@ -101,4 +101,12 @@ public class PlayerGameController : MonoBehaviour
             this._characterControlSystem.canJump = true;
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            _characterControlSystem.canJump = false;
+        }
+    }
 }

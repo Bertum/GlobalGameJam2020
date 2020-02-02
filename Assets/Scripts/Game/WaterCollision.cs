@@ -7,7 +7,8 @@ public class WaterCollision : MonoBehaviour
 
     private void Awake()
     {
-        OnGameEnd += FindObjectOfType<GameController>().EndGame;
+        var ctrl = FindObjectOfType<GameController>();
+        if (ctrl != null) OnGameEnd += ctrl.EndGame;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
