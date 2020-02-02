@@ -82,7 +82,7 @@ public class PlayerGameController : MonoBehaviour
     {
     }
 
-    private void SetRandomSprite()
+    public void SetRandomSprite()
     {
         var rnd = Random.Range(0, 2);
         switch (rnd)
