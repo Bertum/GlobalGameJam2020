@@ -308,7 +308,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: d30e0655b8f630949bdf0c46d632e02d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -332,6 +332,7 @@ MonoBehaviour:
     type: 3}
   FemaleAnimatonClip: {fileID: 7400000, guid: fad57d03f270b2249b4b1d11ed5927f5, type: 2}
   MaleAnimationClip: {fileID: 7400000, guid: 4e7f771c489817b47a1054d986349e7a, type: 2}
+  toolRenderer: {fileID: 768713433}
 --- !u!114 &2090836444522277131
 MonoBehaviour:
   m_ObjectHideFlags: 0
