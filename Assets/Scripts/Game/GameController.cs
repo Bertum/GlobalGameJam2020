@@ -14,9 +14,12 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public Text TimePlayedText;
     private TimeSpan timeSpan;
+    private AudioSource _audioSource;
+    public AudioClip audioClipEndGame;
 
     private void Awake()
     {
+        this._audioSource = GetComponent<AudioSource>();
         escMenu.SetActive(false);
         stopped = false;
         gameFinished = false;
@@ -50,5 +53,7 @@ public class GameController : MonoBehaviour
         uiMenu.SetActive(false);
         endGameMenu.SetActive(true);
         FindObjectOfType<InGameMenu>().SetTitle();
+        this._audioSource.clip = this.audioClipEndGame;
+        this._audioSource.Play();
     }
 }
