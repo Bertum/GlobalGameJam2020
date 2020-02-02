@@ -6,11 +6,13 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject creditsPanel;
     public GameObject rankingPanel;
+    public GameObject howToPlayPanel;
     public Text rankingText;
     private RankingController rankingController;
 
     private void Awake()
     {
+        howToPlayPanel.SetActive(false);
         creditsPanel.SetActive(false);
         rankingPanel.SetActive(false);
         rankingController = FindObjectOfType<RankingController>();
@@ -36,6 +38,16 @@ public class MainMenu : MonoBehaviour
     public void CloseRanking()
     {
         rankingPanel.SetActive(false);
+    }
+
+    public void OpenKeysMap()
+    {
+        howToPlayPanel.SetActive(true);
+    }
+
+    public void CloseKeysMap()
+    {
+        howToPlayPanel.SetActive(false);
     }
 
     public void GoRanking()
