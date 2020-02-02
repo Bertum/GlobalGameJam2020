@@ -34,12 +34,12 @@ public class CharacterControlSystem : MonoBehaviour, InputSystemActionsManager.I
         }
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         this._inputSystemActionsManager.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         this._inputSystemActionsManager.Disable();
     }
