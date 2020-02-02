@@ -480,20 +480,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6663792071512866296, guid: 96fe9317fe033ba45951c7c5c2e3628a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6663792072001711272, guid: 96fe9317fe033ba45951c7c5c2e3628a,
         type: 3}
       propertyPath: m_Name
       value: EscMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663792072001711272, guid: 96fe9317fe033ba45951c7c5c2e3628a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6663792072001711276, guid: 96fe9317fe033ba45951c7c5c2e3628a,
         type: 3}
@@ -602,18 +592,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fe9317fe033ba45951c7c5c2e3628a, type: 3}
---- !u!114 &450357076 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2108582771, guid: d67a717c6c50219408fc29de858d1b44,
-    type: 3}
-  m_PrefabInstance: {fileID: 524324718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &524324718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,20 +599,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2108582769, guid: d67a717c6c50219408fc29de858d1b44, type: 3}
-      propertyPath: m_Name
-      value: Title
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412747261278294022, guid: d67a717c6c50219408fc29de858d1b44,
-        type: 3}
-      propertyPath: Title
-      value: 
-      objectReference: {fileID: 450357076}
-    - target: {fileID: 2412747261278294022, guid: d67a717c6c50219408fc29de858d1b44,
-        type: 3}
-      propertyPath: NameForRanking
-      value: 
-      objectReference: {fileID: 671259348}
     - target: {fileID: 7483214625756533017, guid: d67a717c6c50219408fc29de858d1b44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -745,11 +709,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGameMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 7483214625756533021, guid: d67a717c6c50219408fc29de858d1b44,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d67a717c6c50219408fc29de858d1b44, type: 3}
 --- !u!1 &524324719 stripped
@@ -758,18 +717,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 524324718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &671259348 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2112980670, guid: d67a717c6c50219408fc29de858d1b44,
-    type: 3}
-  m_PrefabInstance: {fileID: 524324718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &792374177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2090,21 +2037,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892765066151504035, guid: 24cc9cdb7d0b0fe4cb35bc789f9337b5,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892765066151504035, guid: 24cc9cdb7d0b0fe4cb35bc789f9337b5,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892765066151504035, guid: 24cc9cdb7d0b0fe4cb35bc789f9337b5,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5892765066812314113, guid: 24cc9cdb7d0b0fe4cb35bc789f9337b5,
         type: 3}
