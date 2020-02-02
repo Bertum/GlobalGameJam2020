@@ -2706,6 +2706,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 768713431, guid: 66e4acc03ee49544799c5aad5b086e28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090836444522277131, guid: 66e4acc03ee49544799c5aad5b086e28,
+        type: 3}
+      propertyPath: fixVerticalMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4769724747816729383, guid: 66e4acc03ee49544799c5aad5b086e28,
         type: 3}
       propertyPath: m_SortingOrder
