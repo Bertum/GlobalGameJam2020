@@ -9,7 +9,7 @@ public class PipesManager : MonoBehaviour
     [HideInInspector]
     public int brokenPipes;
     [HideInInspector]
-    public int TimeToBreak = 3;
+    public int TimeToBreak;
     private float counter;
     private int rndToBreak;
     private bool brokePipe;
@@ -33,6 +33,7 @@ public class PipesManager : MonoBehaviour
         if (counter >= TimeToBreak)
         {
             BreakRandomPipe();
+            TimeToBreak = Random.Range(3, 8);
             counter = 0;
         }
     }
