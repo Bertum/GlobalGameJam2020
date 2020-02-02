@@ -16,6 +16,7 @@ public class PlayerGameController : MonoBehaviour
     private Pipe currentPipe;
     private CharacterControlSystem _characterControlSystem;
     private bool canRepair;
+    private AudioSource _audioSourceRepair;
 
     void Awake()
     {
@@ -27,15 +28,16 @@ public class PlayerGameController : MonoBehaviour
         this._characterControlSystem = GetComponent<CharacterControlSystem>();
         this._characterControlSystem.Repair += Repair;
         this.canRepair = false;
+        this._audioSourceRepair = GetComponent<AudioSource>();
     }
 
     private void Repair(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             this.canRepair = true;
         }
-        
+
         if (context.canceled)
         {
             this.canRepair = false;
@@ -47,13 +49,21 @@ public class PlayerGameController : MonoBehaviour
         if (currentPipe != null && currentPipe.IsBroken && this.canRepair)
         {
             counterToRepair += Time.deltaTime;
+
+            if (!this._audioSourceRepair.isPlaying)
+            {
+                this._audioSourceRepair.Play();
+            }
+
             if (counterToRepair >= 1)
             {
+                this._audioSourceRepair.Stop();
                 currentPipe.FixPipe();
             }
         }
         else
         {
+            this._audioSourceRepair.Stop();
             counterToRepair = 0;
         }
     }
@@ -99,6 +109,14 @@ public class PlayerGameController : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             this._characterControlSystem.canJump = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            _characterControlSystem.canJump = false;
         }
     }
 }
