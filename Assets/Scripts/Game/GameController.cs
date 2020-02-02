@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public float timePlayed;
     public GameObject escMenu;
     public GameObject endGameMenu;
+    public GameObject uiMenu;
     public GameObject player;
     public Text TimePlayedText;
     private TimeSpan timeSpan;
@@ -46,7 +47,8 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         gameFinished = true;
-        endGameMenu.GetComponent<InGameMenu>().SetTitle();
+        uiMenu.SetActive(false);
         endGameMenu.SetActive(true);
+        FindObjectOfType<InGameMenu>().SetTitle();
     }
 }

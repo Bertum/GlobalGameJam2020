@@ -31,6 +31,6 @@ public class InGameMenu : MonoBehaviour
     public void SetTitle()
     {
         var timeSpan = TimeSpan.FromSeconds(gameController.timePlayed);
-        Title.text = $"You have survived { timeSpan.Minutes}:{ timeSpan.Seconds}";
+        Title.text = $"You have survived  {timeSpan.Minutes}:{timeSpan.Seconds}";
     }
 }
