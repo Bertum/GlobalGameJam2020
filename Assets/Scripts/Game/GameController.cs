@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (gameFinished)
+        if (!gameFinished)
         {
             timePlayed += Time.deltaTime;
             timeSpan = TimeSpan.FromSeconds((double)new decimal(timePlayed));
@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         gameFinished = true;
+        endGameMenu.GetComponent<InGameMenu>().SetTitle();
         endGameMenu.SetActive(true);
     }
 }

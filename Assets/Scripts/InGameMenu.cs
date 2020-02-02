@@ -28,7 +28,7 @@ public class InGameMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void SetTile()
+    public void SetTitle()
     {
         var timeSpan = TimeSpan.FromSeconds(gameController.timePlayed);
         Title.text = $"You have survived { timeSpan.Minutes}:{ timeSpan.Seconds}";
