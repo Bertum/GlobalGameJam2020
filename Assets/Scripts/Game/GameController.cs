@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     public Text TimePlayedText;
     private TimeSpan timeSpan;
     private AudioSource _audioSource;
-    public AudioClip audioClipEndGame;
+    //public AudioClip audioClipEndGame;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
         uiMenu.SetActive(false);
         endGameMenu.SetActive(true);
         FindObjectOfType<InGameMenu>().SetTitle();
-        this._audioSource.clip = this.audioClipEndGame;
-        this._audioSource.Play();
+        //this._audioSource.clip = this.audioClipEndGame;
+        //this._audioSource.Play();
     }
 }
