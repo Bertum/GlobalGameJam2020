@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2932217743487648706
 BoxCollider2D:
@@ -188,4 +188,4 @@ MonoBehaviour:
   numberPlayer: 1
   fixVerticalMove: 1
   canJump: 1
-  forceJump: 30
+  forceJump: 35
